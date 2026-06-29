@@ -2,7 +2,7 @@ spring:
   application:
     name: tripai
   datasource:
-    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/tripai}
+    url: jdbc:${DATABASE_URL:postgresql://localhost:5432/tripai}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
