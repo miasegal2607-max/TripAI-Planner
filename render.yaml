@@ -10,10 +10,26 @@ services:
         value: 8080
       - key: JWT_SECRET
         generateValue: true
-      - key: DATABASE_URL
+      - key: DB_HOST
         fromDatabase:
           name: tripai-db
-          property: connectionString
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: tripai-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: tripai-db
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: tripai-db
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: tripai-db
+          property: password
       - key: OPENAI_API_KEY
         sync: false
       - key: GOOGLE_PLACES_API_KEY
