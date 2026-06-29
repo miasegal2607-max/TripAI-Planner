@@ -2,8 +2,9 @@ spring:
   application:
     name: tripai
   datasource:
-    url: jdbc:${DATABASE_URL:postgresql://localhost:5432/tripai}
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:tripai}
+    username: ${DB_USER:sa}
+    password: ${DB_PASS:}
   jpa:
     hibernate:
       ddl-auto: update
